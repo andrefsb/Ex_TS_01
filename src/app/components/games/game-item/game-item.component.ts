@@ -8,20 +8,33 @@ import Game from 'src/app/models/Game';
 })
 
 export class GameItemComponent {
-// @Input("tit") title: string = "Jogo não especificado";
-// description: string = "Sem descrição";
-// dueDate: Date= new Date();
-// status: boolean = false;
+  // @Input("tit") title: string = "Jogo não especificado";
+  // description: string = "Sem descrição";
+  // dueDate: Date= new Date();
+  // status: boolean = false;
 
-@Input() game?: Game = {
-  title: "Jogo não especificado",
-  day:"Sem descrição",
-  hour: "teste",
-  result: "teste",
-};
+  @Input() game: Game = {
+    title: "Jogo não especificado",
+    day: "Sem descrição",
+    hour: "00",
+    result: "0x0",
+    vitoria: false
+  };
 
-constructor() {
+  constructor() {
 
-}
+  }
+
+  changeStatus() {
+      this.game.vitoria = !this.game?.vitoria;
+  }
+
+  getColor(): string {
+    return this.game?.vitoria ? "rgb(0, 255, 102)" : "";
+  }
+
+  ngOnChanges(): void {
+    console.log("Game List Item has changed!")
+  }
 }
 

@@ -3,4 +3,5 @@ export default interface Game{
     day: string;
     hour: string;
     result: string;
+    vitoria: boolean;
 }
