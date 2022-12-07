@@ -1,3 +1,5 @@
+import { StatusPipe } from './pipes/status.pipe';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 
 import { NgModule } from '@angular/core';
@@ -8,15 +10,17 @@ import { MaterialModule } from '../components/material/material.module';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    StatusPipe
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    
+    RouterModule,
   ], 
   exports:[
-    HeaderComponent
+    HeaderComponent,
+    StatusPipe
   ]
 })
 export class SharedModule { }

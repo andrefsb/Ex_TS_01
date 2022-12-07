@@ -1,6 +1,6 @@
 import { MaterialModule } from './material/material.module';
 import { GamesComponent } from './../components/games/games.component';
-
+import { SharedModule } from './../shared/shared.module';
 import { GameItemComponent } from './games/game-item/game-item.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,8 @@ import { CommonModule } from '@angular/common';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   exports:[
     GamesComponent,

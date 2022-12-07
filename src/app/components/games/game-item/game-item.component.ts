@@ -13,9 +13,9 @@ export class GameItemComponent {
   // dueDate: Date= new Date();
   // status: boolean = false;
 
-  @Input() game: Game = {
+  @Input() game?: Game = {
     title: "Jogo não especificado",
-    day: "Sem descrição",
+    day: new Date(),
     hour: "00",
     result: "0x0",
     vitoria: false
@@ -26,7 +26,7 @@ export class GameItemComponent {
   }
 
   changeStatus() {
-      this.game.vitoria = !this.game?.vitoria;
+      if(this.game) this.game.vitoria = !this.game.vitoria;
   }
 
   getColor(): string {

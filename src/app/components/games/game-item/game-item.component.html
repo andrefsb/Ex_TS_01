@@ -1,16 +1,16 @@
 
-<mat-expansion-panel hideToggle [ngStyle]="{backgroundColor: getColor()}">
+<mat-expansion-panel hideToggle *ngIf="game"   [ngStyle]="{backgroundColor: getColor()}">
     <mat-expansion-panel-header>
-      <mat-panel-title [ngClass]="{'vitoria': this.game?.vitoria}">
-        <mat-checkbox [checked] = "game?.vitoria" (change)="changeStatus()"></mat-checkbox>
-       {{this.game?.title}}
+      <mat-panel-title [ngClass]="{'vitoria': this.game.vitoria}">
+        <mat-checkbox [checked] = "game.vitoria" (change)="changeStatus()"></mat-checkbox>
+       {{this.game.title}}
       </mat-panel-title >
 </mat-expansion-panel-header>
 <ul>
-    <li><b>Data:</b> {{this.game?.day}}</li>
-    <li><b>Hora:</b> {{this.game?.hour}}</li>
-    <li><b>Resultado:</b> {{this.game?.result}}</li>
-    <li><b>Vitória:</b> {{this.game?.vitoria}}</li>
+    <li><b>Data:</b> {{this.game.day | date: "dd/MM/yyyy"}}</li>
+    <li><b>Hora:</b> {{this.game.hour}}</li>
+    <li *ngIf="game.result"><b>Resultado:</b> {{this.game.result}}</li>
+    <li *ngIf="game.vitoria != undefined"><b>Vitória:</b> {{this.game.vitoria | vitoria }}</li>
   </ul>
 </mat-expansion-panel>
 

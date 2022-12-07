@@ -1,7 +1,7 @@
 export default interface Game{
     title: string;
-    day: string;
+    day: Date;
     hour: string;
-    result: string;
-    vitoria: boolean;
+    result?: string;
+    vitoria?: boolean;
 }
