@@ -1,4 +1,4 @@
-import { MaterialModule } from './../material/material.module';
+import { MaterialModule } from './material/material.module';
 import { GamesComponent } from './../components/games/games.component';
 
 import { GameItemComponent } from './games/game-item/game-item.component';
