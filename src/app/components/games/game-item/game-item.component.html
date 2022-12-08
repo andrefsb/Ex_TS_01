@@ -2,7 +2,7 @@
 <mat-expansion-panel hideToggle *ngIf="game"   [ngStyle]="{backgroundColor: getColor()}">
     <mat-expansion-panel-header>
       <mat-panel-title [ngClass]="{'vitoria': this.game.vitoria}">
-        <mat-checkbox [checked] = "game.vitoria" (change)="changeStatus()"></mat-checkbox>
+        <mat-checkbox [checked] = "game.vitoria" (change)="changeStatus()" (click)="$event.stopPropagation()"></mat-checkbox>
        {{this.game.title}}
       </mat-panel-title >
 </mat-expansion-panel-header>
