@@ -26,7 +26,7 @@ export class GameItemComponent {
   }
 
   changeStatus() {
-      if(this.game) this.game.vitoria = !this.game.vitoria;
+      if(this.game && new Date(this.game.day).getTime() <= new Date().getTime())this.game.vitoria = !this.game.vitoria;
   }
 
   getColor(): string {
