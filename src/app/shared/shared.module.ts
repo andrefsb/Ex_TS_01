@@ -1,3 +1,4 @@
+import { GameDirective } from './directives/game.directive';
 import { StatusPipe } from './pipes/status.pipe';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
@@ -11,7 +12,8 @@ import { MaterialModule } from '../components/material/material.module';
 @NgModule({
   declarations: [
     HeaderComponent,
-    StatusPipe
+    StatusPipe,
+    GameDirective
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { MaterialModule } from '../components/material/material.module';
   ], 
   exports:[
     HeaderComponent,
-    StatusPipe
+    StatusPipe, 
+    GameDirective
   ]
 })
 export class SharedModule { }

@@ -2,7 +2,7 @@
 
 <h3>Jogos do Brasil</h3>
 <mat-accordion >
-    <app-game-item *ngFor="let game of gameList" [game] = "game"></app-game-item>
+    <app-game-item [game] = "game" *ngFor="let game of gameList" [game] = "game"></app-game-item>
 </mat-accordion>
 <br>
 <!-- <mat-slide-toggle>Toggle-me</mat-slide-toggle> -->
