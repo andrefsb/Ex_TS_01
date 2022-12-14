@@ -1,5 +1,4 @@
 
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,8 +10,8 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
-import { GameCreateComponent } from './pages/game-create/game-create.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { GameCreateComponent } from './pages/game-create/game-create.component';
 
 
 
@@ -20,8 +19,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 @NgModule({
   declarations: [
     AppComponent,
-    GameCreateComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    GameCreateComponent
 
   ],
   imports: [
@@ -32,7 +31,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     SharedModule,
     ComponentsModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
   ],
   providers: [],

@@ -1,0 +1,44 @@
+<form class="game-form" *ngIf="gameForm" [formGroup]="gameForm" (ngSubmit)="onSubmitForm()">
+
+    <!-- <label for="title">Título</label><br>
+        <input id="title"  formControlName="title" required> -->
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title">
+    </mat-form-field>
+
+
+
+    <!-- <label for="date">Data</label><br>
+        <input id="date" type ="date" formControlName="day" required> -->
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Data</mat-label>
+        <input matInput type="date" formControlName="day">
+    </mat-form-field>
+
+
+
+    <!-- <label for="hour">Hora</label><br>
+        <input id="hour" type ="time" formControlName="hour" required> -->
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Hora</mat-label>
+        <input matInput type="time" formControlName="hour">
+    </mat-form-field>
+
+
+    <div *ngIf="!post">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Resultado</mat-label>
+            <input matInput formControlName="result">
+        </mat-form-field>
+    </div>
+
+    <div *ngIf="!post">
+        <mat-checkbox formControlName="vitoria">Vitória do Brasil?</mat-checkbox>
+    </div>
+    <br>
+    <button mat-stroked-button color="primary" type="submit">{{requestType == "post"? "Cadastrar novo " : "Atualizar "}}
+        Jogo</button>
+</form>

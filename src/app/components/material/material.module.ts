@@ -8,6 +8,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatMenuModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatInputModule,
+    MatDialogModule
     ]
 })
 export class MaterialModule { }
