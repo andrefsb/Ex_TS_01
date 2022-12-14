@@ -5,6 +5,7 @@
         (click)="$event.stopPropagation()"></mat-checkbox>
       {{this.game.title}}
     </mat-panel-title>
+  <button mat-icon-button color="warn" (click)="deleteItem()">X</button>
   </mat-expansion-panel-header>
   <ul>
     <li><b>Data:</b> {{this.game.day | date: "dd/MM/yyyy"}}</li>
@@ -13,7 +14,6 @@
     <li *ngIf="game.vitoria != undefined"><b>Vitória:</b> {{this.game.vitoria | vitoria }}</li>
   </ul>
   <button mat-raised-button color="primary" (click)="openDialog()">Atualizar</button>
-  <button mat-raised-button color="warn" (click)="deleteItem()">Remover</button>
 
   <ng-template #dialogTemplate>
     <app-dialog>
