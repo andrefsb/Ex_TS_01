@@ -9,9 +9,6 @@ import { ThisReceiver } from '@angular/compiler';
   styleUrls: ['./game-create.component.css']
 })
 export class GameCreateComponent {
-  
-
-  newGame: Game = new Game("Novo Jogo", new Date(), "00:00");
 
   gameForm?: FormGroup;
 
@@ -32,27 +29,3 @@ export class GameCreateComponent {
 
     });
   }
-
-  onSubmitForm() {
-    // this.newGame.title = this.gameForm?.controls ['title'].value;
-    // this.newGame.day = this.gameForm?.controls ['day'].value;
-    // this.newGame.hour = this.gameForm?.controls ['hour'].value;
-    // this.newGame.result= this.gameForm?.controls ['result'].value;
-    // this.newGame.vitoria = this.gameForm?.controls ['vitoria'].value;
-
-
-    this.gameForm?.patchValue({
-      title: this.gameForm.controls['title'].value,
-      day: this.gameForm.controls['day'].value,
-      hour: this.gameForm.controls['hour'].value,
-      result: this.gameForm.controls['result'].value,
-      vitoria: this.gameForm.controls['vitoria'].value
-
-    })
-
-    this.newGame = this.gameForm?.value;
-    
-    console.log(this.newGame)
-    }
-}
-
