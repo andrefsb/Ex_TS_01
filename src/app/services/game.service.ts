@@ -61,12 +61,14 @@ export class GameService {
 
   postGame(newGame:Game): void{
     this.gameList.push(newGame);
+    alert("Jogo criado com sucesso!")
   }
 
   
   updateGame(id: number, updatedGame: Game) {
     const index = this.gameList.findIndex((game)=> game.id == id);
     this.gameList[index] = updatedGame;
+    
   }
 
   deleteGame(id:number){

@@ -14,6 +14,7 @@ export class GameFormComponent {
 
 
   @Input() newGame: Game = new Game("Novo Jogo", new Date(), "00:00","Indefinido",false);
+  @Input() newGameUpload: Game = new Game("Novo Jogo", new Date(), "00:00","Indefinido",false);
   @Input() requestType: string = "post";
   @Input() post: boolean = false;
 
@@ -66,14 +67,16 @@ export class GameFormComponent {
 
     })
 
-    this.newGame = { id: this.newGame.id, ...this.gameForm?.value };
+    this.newGameUpload = { id: this.newGame.id, ...this.gameForm?.value };
+    this.newGame = { id: this.newGame.id, title: this.newGame.title, day: this.newGame.day, hour: this.newGame.hour };
 
 
     if (this.requestType == "post") {
       this.gameService.postGame(this.newGame);
     }
     else{
-      this.gameService.updateGame(this.newGame.id, this.newGame)
+      this.gameService.updateGame(this.newGameUpload.id, this.newGameUpload)
+      alert("Jogo atualizado com sucesso.")
     }
   }
 }

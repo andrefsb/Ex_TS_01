@@ -50,12 +50,19 @@ export class GameItemComponent {
   }
 
   deleteItem(){
-   if(this.game) this.gameService.deleteGame(this.game.id);
+    if(this.game)
+    if (confirm("Tem certeza que deseja deletar o jogo "+ this.game.title +" ?")) {
+       this.gameService.deleteGame(this.game.id);
+    } else {
+      alert("Jogo "+ this.game.title +" não deletado.")
+    }
+   
   }
 
   openDialog() {
     if(this.dialogTemplate)
     this.dialog.open(this.dialogTemplate, {data:{title: "Atualizar Jogo"}})
+    
   }
 
 }
